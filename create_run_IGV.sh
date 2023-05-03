@@ -1,7 +1,6 @@
-#!/bin/bash
+#! /bin/bash
 
 source ~/.bashrc
-
 chmod +x create_run_IGV.sh
 
 # create directory if not exist

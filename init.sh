@@ -44,7 +44,7 @@ export run_IGV=1
 
 
 #################################################
-# Fixed Data locations -- DO NOT CHANGE THESE
+# Fixed Data locations -- DO NOT CHANGE THESE UNLESS THE ROOT FOLDER IS DIFFERENT
 #################################################
 # DeepTSS
 export DATA_DIR="/ocean/projects/bio230007p/$USERNAME/DeepTSS/data"

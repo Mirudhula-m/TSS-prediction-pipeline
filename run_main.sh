@@ -33,4 +33,5 @@ $PYTHON_PATH main.py \
 			-calculate_visual $calculate_visual \
  			-get_visual $get_visual \
 			-get_bscores $get_bscores \
+			-run_IGV $run_IGV \
 			-user $USERNAME
