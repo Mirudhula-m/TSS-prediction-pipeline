@@ -11,6 +11,7 @@ parser.add_argument('-calculate_visual', '--calculate_visual', type=str, require
 parser.add_argument('-get_visual', '--get_visual', type=str, required=True, help='1/0 for getting visualization plots')
 parser.add_argument('-get_bscores', '--get_bscores', type=str, required=True, help='1/0 for calculating Bed file scores with refTSS')
 parser.add_argument('-run_IGV', '--run_IGV', type=str, required=True, help='1/0 for running the IGV and getting visualization output')
+parser.add_argument('-user', '--user_name', type=str, required=True, help='User name on bridges2')
 
 # Parse the arguments
 args = parser.parse_args()
@@ -35,13 +36,13 @@ else:
 subprocess.call("./init.sh")
 
 OUT_DIR = os.getenv('OUT_DIR')
-DNABERT_PATH="/ocean/projects/bio230007p/mukundan/DNABert"
+DNABERT_PATH="/ocean/projects/bio230007p/"+args.user_name+"/DNABert"
 
 if args.run_dBERT == str(1):
 	print("RUNNING DNABERT")
 
 	print("----RUNNING HIGH CONFIDENCE SEQUENCES----")
-	os.environ['DATA_PATH'] = OUT_DIR+"/high_prob"#"/jet/home/mukundan/DNABERT/examples/sample_data/ft/6"
+	os.environ['DATA_PATH'] = OUT_DIR+"/high_prob"
 	#OUT_DIR+"/high_prob"
 	os.environ['PREDICTION_PATH'] = DNABERT_PATH+"/OUT/high"
 	#/high
@@ -83,7 +84,7 @@ else:
 	print("SKIPPING SCORING BED FILES")
 
 if args.run_IGV == str(1):
-	print("RUNNINg IGV")
+	print("RUNNING IGV")
 	subprocess.run(['./run_IGV.sh'])
 else:
 	print("SKIPPING RUNNING IGV")

@@ -13,21 +13,22 @@ import matplotlib.pyplot as plt
 parser = argparse.ArgumentParser(description='Process input file')
 parser.add_argument('-n', '--data_name', type=str, required=True, help='Name of cage directory that was used initially')
 parser.add_argument('-ref', '--ref_gene_name', type=str, required=True, help='Name of the reference genome being used - hg38/mm10')
+parser.add_argument('-user', '--user_name', type=str, required=True, help='User name on bridges2')
 
 # Parse the arguments
 args = parser.parse_args()
 
-DEEPTSS_DIR="/ocean/projects/bio230007p/mukundan/DeepTSS/data/"+args.data_name+"/OUT/"
+DEEPTSS_DIR="/ocean/projects/bio230007p/"+args.user_name+"/DeepTSS/data/"+args.data_name+"/OUT/"
 high_tsv_path = DEEPTSS_DIR+"high_prob/pre_dev.tsv"
 low_tsv_path = DEEPTSS_DIR+"low_prob/pre_dev.tsv"
 bed_path = DEEPTSS_DIR+"/flanked.bed"
 # bed_path = glob.glob(DEEPTSS_DIR + '*' + '.Scored.bed')[0]
 
-DNABERT_OUT_PATH="/ocean/projects/bio230007p/mukundan/DNABert/OUT/"+args.data_name
+DNABERT_OUT_PATH="/ocean/projects/bio230007p/"+args.user_name+"/DNABert/OUT/"+args.data_name
 high_path = DNABERT_OUT_PATH+"/high/preds.npy"
 low_path = DNABERT_OUT_PATH+"/low/preds.npy"
 
-scoring_PATH="/ocean/projects/bio230007p/mukundan/scoring_bed_files/"+args.data_name
+scoring_PATH="/ocean/projects/bio230007p/"+args.user_name+"/scoring_bed_files/"+args.data_name
 if not os.path.exists(scoring_PATH) or not os.path.exists(scoring_PATH+"/high"):
 	if not os.path.exists(scoring_PATH):
 		os.makedirs(scoring_PATH)
@@ -146,7 +147,7 @@ print("High Confidence Metrics:")
 
 
 # Compare resulting BED files to reference BED file using bedtools
-reference_bed_path = "/ocean/projects/bio230007p/mukundan/scoring_bed_files/"+ref_file_name
+reference_bed_path = "/ocean/projects/bio230007p/"+args.user_name+"/scoring_bed_files/"+ref_file_name
 
 deeptss_intersect_path = scoring_high_path+"/deeptss_intersect.bed"
 deeptss_comp_interesect_path = scoring_high_path+"/deeptss_comp_intersect.bed"

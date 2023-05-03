@@ -11,11 +11,12 @@ import os
 # Initialize the argument parser
 parser = argparse.ArgumentParser(description='Process input file')
 parser.add_argument('-n', '--data_name', type=str, required=True, help='Name of cage directory that was used initially')
+parser.add_argument('-user', '--user_name', type=str, required=True, help='User name on bridges2')
 
 # Parse the arguments
 args = parser.parse_args()
 
-DEEPTSS_DIR="/ocean/projects/bio230007p/mukundan/DeepTSS/data/"+args.data_name+"/OUT"
+DEEPTSS_DIR="/ocean/projects/bio230007p/"+args.user_name+"/DeepTSS/data/"+args.data_name+"/OUT"
 # High confidence
 dt_path_high = DEEPTSS_DIR+"/high_prob/dev.tsv"
 # Low confidence
@@ -36,8 +37,8 @@ with open(dt_path_low, 'r') as file:
 
 
 
-DNABERT_PATH="/ocean/projects/bio230007p/mukundan/DNABert"
-OUT_PATH="/ocean/projects/bio230007p/mukundan/DNABert/OUT/"+args.data_name
+DNABERT_PATH="/ocean/projects/bio230007p/"+args.user_name+"/DNABert"
+OUT_PATH="/ocean/projects/bio230007p/"+args.user_name+"/DNABert/OUT/"+args.data_name
 if not os.path.exists(OUT_PATH):
 
     os.makedirs(OUT_PATH)

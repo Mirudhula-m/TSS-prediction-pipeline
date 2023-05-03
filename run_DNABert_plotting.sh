@@ -11,7 +11,7 @@ conda activate main
 # Find the full path to the python executable within the deeptss environment
 PYTHON_PATH=$(which python)
 
-$PYTHON_PATH DNABert_visualize.py -n $CAGE_DIR_NAME
+$PYTHON_PATH DNABert_visualize.py -n $CAGE_DIR_NAME -user $USERNAME
 
 # $PYTHON_PATH DNABERT/examples/visualize.py \
 #     --kmer $KMER \

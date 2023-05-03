@@ -32,4 +32,5 @@ $PYTHON_PATH main.py \
 			-run_dBERT $run_dBERT \
 			-calculate_visual $calculate_visual \
  			-get_visual $get_visual \
-			-get_bscores $get_bscores
+			-get_bscores $get_bscores \
+			-user $USERNAME

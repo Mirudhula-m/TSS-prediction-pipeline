@@ -32,11 +32,11 @@ export KMER=4
 
 
 # Deciding which sections of the analysis to run
-export run_dTSS=0
-export run_preprocess=0
-export run_dBERT=0
-export calculate_visual=0
-export get_visual=0
+export run_dTSS=1
+export run_preprocess=1
+export run_dBERT=1
+export calculate_visual=1
+export get_visual=1
 export get_bscores=1
 export run_IGV=1
 
