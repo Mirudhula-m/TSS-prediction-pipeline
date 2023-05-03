@@ -10,6 +10,7 @@ parser.add_argument('-run_dBERT', '--run_dBERT', type=str, required=True, help='
 parser.add_argument('-calculate_visual', '--calculate_visual', type=str, required=True, help='1/0 for calculating visalization scores')
 parser.add_argument('-get_visual', '--get_visual', type=str, required=True, help='1/0 for getting visualization plots')
 parser.add_argument('-get_bscores', '--get_bscores', type=str, required=True, help='1/0 for calculating Bed file scores with refTSS')
+parser.add_argument('-run_IGV', '--run_IGV', type=str, required=True, help='1/0 for running the IGV and getting visualization output')
 
 # Parse the arguments
 args = parser.parse_args()
@@ -81,7 +82,11 @@ if args.get_bscores == str(1):
 else:
 	print("SKIPPING SCORING BED FILES")
 
-
+if args.run_IGV == str(1):
+	print("RUNNINg IGV")
+	subprocess.run(['./run_IGV.sh'])
+else:
+	print("SKIPPING RUNNING IGV")
 
 
 
