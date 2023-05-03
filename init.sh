@@ -38,6 +38,7 @@ export run_dBERT=0
 export calculate_visual=0
 export get_visual=0
 export get_bscores=1
+export run_IGV=1
 
 
 
