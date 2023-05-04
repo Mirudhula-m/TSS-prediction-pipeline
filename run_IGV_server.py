@@ -7,12 +7,14 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-ref', type=str, required=True, help='Name of the reference genome being used [Ex: hg38]; ')
 parser.add_argument('-i', type=str, required=True, help='The input directory contains lists of .bed outputs; ')
 parser.add_argument('-o', type=str, required=True, help='The output directory path for bashscript and snapshot;')
+parser.add_argument('-user', '--user_name', type=str, required=True, help='User name on bridges2')
+
 
 args = parser.parse_args()
 
 # Set the input and output directories
 ref_genome = os.path.splitext(args.ref)[0]
-input_directory_path = "$PROJECT/scoring_bed_files/" + args.i
+input_directory_path = "/ocean/projects/bio230007p/"+args.user_name+"/scoring_bed_files/" + args.i
 input_dir_path_high = os.path.join(input_directory_path, "high")
 input_dir_path_low = os.path.join(input_directory_path, "low")
 output_directory_path_high = os.path.join(args.o, args.i, "high")

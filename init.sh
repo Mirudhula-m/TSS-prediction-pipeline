@@ -9,12 +9,12 @@ chmod +x init.sh
 # psc username
 export USERNAME="mukundan"
 # DeepTSS
-export CAGE_DIR_NAME="fantom6_human_dermal_fibroblasts"
+export CAGE_DIR_NAME="cervical_cancer_line"
 #"fantom6_human_dermal_fibroblasts"
 #"fantom5_adipocyte_breast"
 #"human_pancreatic"
 #"mouse_pancreatic"
-export BAM_FILE_NAME="CNhi10452_150325_SN554_0245_AC6N6UACXX_NoIndex_L002_R1_001.F6-001-RNA-001-01C07-FE82.CAC.10003.bam"
+export BAM_FILE_NAME="ccline.bam"
 #"CNhi10452_150325_SN554_0245_AC6N6UACXX_NoIndex_L002_R1_001.F6-001-RNA-001-01C07-FE82.CAC.10003.bam"
 #"Adipocyte_breast_donor1"
 export REF_GENE_NAME="hg38.fa"
@@ -32,11 +32,11 @@ export KMER=4
 
 
 # Deciding which sections of the analysis to run
-export run_dTSS=1
-export run_preprocess=1
-export run_dBERT=1
-export calculate_visual=1
-export get_visual=1
+export run_dTSS=0
+export run_preprocess=0
+export run_dBERT=0
+export calculate_visual=0
+export get_visual=0
 export get_bscores=1
 export run_IGV=1
 

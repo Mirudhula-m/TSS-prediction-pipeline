@@ -164,9 +164,9 @@ dnabert_bed_path = scoring_high_path+"/dnabert.bed"
 
 
 # Run bedtools intersect to compare BED files
-subprocess.run(["bedtools", "intersect", "-a", deeptss_bed_path, "-b", reference_bed_path, "-wa"], stdout=open(deeptss_intersect_path, "w"))
-subprocess.run(["bedtools", "intersect", "-a", deeptss_bed_path, "-b", reference_bed_path, "-v"], stdout=open(deeptss_comp_interesect_path, "w"))
-subprocess.run(["bedtools", "intersect", "-a", reference_bed_path, "-b", deeptss_bed_path, "-v"], stdout=open(deeptss_ref_comp_interesect_path, "w"))
+subprocess.run(["bedtools", "intersect", "-a", deeptss_bed_file_path, "-b", reference_bed_path, "-wa"], stdout=open(deeptss_intersect_path, "w"))
+subprocess.run(["bedtools", "intersect", "-a", deeptss_bed_file_path, "-b", reference_bed_path, "-v"], stdout=open(deeptss_comp_interesect_path, "w"))
+subprocess.run(["bedtools", "intersect", "-a", reference_bed_path, "-b", deeptss_bed_file_path, "-v"], stdout=open(deeptss_ref_comp_interesect_path, "w"))
 
 subprocess.run(["bedtools", "intersect", "-a", dnabert_bed_path, "-b", reference_bed_path, "-v"], stdout=open(dnabert_comp_interesect_path, "w"))
 subprocess.run(["bedtools", "intersect", "-a", dnabert_bed_path, "-b", reference_bed_path, "-wa"], stdout=open(dnabert_intersect_path, "w"))
@@ -244,9 +244,9 @@ dnabert_bed_path = scoring_low_path+"/dnabert.bed"
 
 
 # Run bedtools intersect to compare BED files
-subprocess.run(["bedtools", "intersect", "-a", deeptss_bed_path, "-b", reference_bed_path, "-wa"], stdout=open(deeptss_intersect_path, "w"))
-subprocess.run(["bedtools", "intersect", "-a", deeptss_bed_path, "-b", reference_bed_path, "-v"], stdout=open(deeptss_comp_interesect_path, "w"))
-subprocess.run(["bedtools", "intersect", "-a", reference_bed_path, "-b", deeptss_bed_path, "-v"], stdout=open(deeptss_ref_comp_interesect_path, "w"))
+subprocess.run(["bedtools", "intersect", "-a", deeptss_bed_file_path, "-b", reference_bed_path, "-wa"], stdout=open(deeptss_intersect_path, "w"))
+subprocess.run(["bedtools", "intersect", "-a", deeptss_bed_file_path, "-b", reference_bed_path, "-v"], stdout=open(deeptss_comp_interesect_path, "w"))
+subprocess.run(["bedtools", "intersect", "-a", reference_bed_path, "-b", deeptss_bed_file_path, "-v"], stdout=open(deeptss_ref_comp_interesect_path, "w"))
 
 subprocess.run(["bedtools", "intersect", "-a", dnabert_bed_path, "-b", reference_bed_path, "-v"], stdout=open(dnabert_comp_interesect_path, "w"))
 subprocess.run(["bedtools", "intersect", "-a", dnabert_bed_path, "-b", reference_bed_path, "-wa"], stdout=open(dnabert_intersect_path, "w"))
